@@ -4,1013 +4,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Electricity Consumption Analyzer</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="back.py"></script>
-    <!-- Chart.js for Electricity Graphs -->
+
+    <!-- Chart.js for graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+<header class="header">
 
-    <header class="header">
+    <div class="logo">
+        ⚡ Electricity Analyzer
+    </div>
 
-        <div class="logo">
-            ⚡ Electricity Analyzer
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#monthly-data">Monthly Data</a>
+        <a href="#appliances">Appliances</a>
+        <a href="#reports">Reports</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">SMART ENERGY MANAGEMENT</span>
+
+        <h1>
+            Electricity Consumption
+            <span>Analyzer</span>
+        </h1>
+
+        <p>
+            Track electricity consumption, calculate bills,
+            analyze appliances and visualize your energy usage.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#monthly-data" class="primary-btn">
+                + Add Monthly Data
+            </a>
+
+            <a href="#dashboard" class="secondary-btn">
+                View Dashboard
+            </a>
+
         </div>
 
-        <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#monthly-data">Monthly Data</a>
-            <a href="#appliances">Appliances</a>
-            <a href="#reports">Reports</a>
-        </nav>
+    </div>
 
-    </header>
+    <div class="hero-card">
+
+        <div class="electric-icon">
+            ⚡
+        </div>
+
+        <h3>Energy Monitoring</h3>
+
+        <p>
+            Analyze your monthly electricity usage
+            and identify high consumption.
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= HERO SECTION ================= -->
+<main id="dashboard" class="container">
 
-    <section class="hero">
 
-        <div class="hero-content">
+<section class="section">
 
-            <span class="badge">
-                SMART ENERGY MANAGEMENT
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                OVERVIEW
             </span>
 
-            <h1>
-                Electricity Consumption
-                <span>Analyzer</span>
-            </h1>
+            <h2>
+                Electricity Dashboard
+            </h2>
 
             <p>
-                Track electricity consumption, calculate bills,
-                analyze appliances and visualize your energy usage.
+                Get a quick overview of your electricity consumption
+                and monthly bills.
             </p>
-
-            <div class="hero-buttons">
-
-                <a href="#monthly-data" class="primary-btn">
-                    + Add Monthly Data
-                </a>
-
-                <a href="#dashboard" class="secondary-btn">
-                    View Dashboard
-                </a>
-
-            </div>
 
         </div>
 
+    </div>
 
-        <div class="hero-card">
 
-            <div class="electric-icon">
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
                 ⚡
             </div>
 
-            <h3>
-                Energy Monitoring
-            </h3>
+            <div>
+
+                <p>Total Consumption</p>
+
+                <h3 id="totalConsumption">
+                    0 Units
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+
+                <p>Average Consumption</p>
+
+                <h3 id="averageConsumption">
+                    0 Units
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <p>Total Electricity Bill</p>
+
+                <h3 id="totalBill">
+                    ₹0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📅
+            </div>
+
+            <div>
+
+                <p>Months Recorded</p>
+
+                <h3 id="monthsRecorded">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="monthly-data" class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                DATA ENTRY
+            </span>
+
+            <h2>
+                Add Monthly Electricity Data
+            </h2>
 
             <p>
-                Analyze your monthly electricity usage
-                and identify high consumption.
+                Enter your monthly electricity consumption
+                and electricity rate.
             </p>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- ================= DASHBOARD ================= -->
+    <div class="form-card">
 
-    <main id="dashboard" class="container">
+        <form id="electricityForm">
 
-        <div class="section-heading">
+            <div class="form-grid">
 
-            <div>
+                <div class="form-group">
 
-                <span class="small-title">
-                    OVERVIEW
-                </span>
-
-                <h2>
-                    Electricity Dashboard
-                </h2>
-
-                <p>
-                    Get a quick overview of your electricity consumption
-                    and monthly bills.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= STATISTICS CARDS ================= -->
-
-        <div class="stats-grid">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    ⚡
-                </div>
-
-                <div>
-                    <p>Total Consumption</p>
-
-                    <h3 id="totalConsumption">
-                        0 Units
-                    </h3>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    📊
-                </div>
-
-                <div>
-                    <p>Average Consumption</p>
-
-                    <h3 id="averageConsumption">
-                        0 Units
-                    </h3>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    💰
-                </div>
-
-                <div>
-                    <p>Total Electricity Bill</p>
-
-                    <h3 id="totalBill">
-                        ₹0
-                    </h3>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    📅
-                </div>
-
-                <div>
-                    <p>Months Recorded</p>
-
-                    <h3 id="monthsRecorded">
-                        0
-                    </h3>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= MONTHLY DATA ================= -->
-
-        <section id="monthly-data" class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        DATA ENTRY
-                    </span>
-
-                    <h2>
-                        Add Monthly Electricity Data
-                    </h2>
-
-                    <p>
-                        Enter your monthly electricity consumption
-                        and electricity rate.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="form-card">
-
-                <form id="electricityForm">
-
-                    <div class="form-grid">
-
-                        <div class="form-group">
-
-                            <label for="month">
-                                Month
-                            </label>
-
-                            <input
-                                type="text"
-                                id="month"
-                                placeholder="Example: January"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="units">
-                                Electricity Consumption
-                            </label>
-
-                            <input
-                                type="number"
-                                id="units"
-                                placeholder="Enter units"
-                                min="0"
-                                step="0.01"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="rate">
-                                Electricity Rate (₹/unit)
-                            </label>
-
-                            <input
-                                type="number"
-                                id="rate"
-                                placeholder="Example: 8"
-                                min="0"
-                                step="0.01"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="primary-btn">
-
-                        Add Data
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= DATA TABLE ================= -->
-
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        RECORDS
-                    </span>
-
-                    <h2>
-                        Monthly Electricity Data
-                    </h2>
-
-                    <p>
-                        View all recorded electricity consumption.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="outline-btn"
-                    onclick="clearData()">
-
-                    Clear Data
-
-                </button>
-
-            </div>
-
-
-            <div class="table-container">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>#</th>
-                            <th>Month</th>
-                            <th>Consumption</th>
-                            <th>Rate</th>
-                            <th>Bill</th>
-                            <th>Status</th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody id="dataTable">
-
-                        <tr>
-
-                            <td
-                                colspan="6"
-                                class="empty">
-
-                                No electricity data available.
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ANALYSIS ================= -->
-
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        ANALYSIS
-                    </span>
-
-                    <h2>
-                        Consumption Analysis
-                    </h2>
-
-                    <p>
-                        Important statistics based on your data.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="analysis-grid">
-
-
-                <div class="analysis-card">
-
-                    <div class="analysis-top">
-
-                        <span>
-                            Highest Consumption
-                        </span>
-
-                        <span>
-                            🔺
-                        </span>
-
-                    </div>
-
-
-                    <h3 id="maxConsumption">
-                        0 Units
-                    </h3>
-
-
-                    <p id="maxMonth">
-                        No data
-                    </p>
-
-                </div>
-
-
-                <div class="analysis-card">
-
-                    <div class="analysis-top">
-
-                        <span>
-                            Lowest Consumption
-                        </span>
-
-                        <span>
-                            🔻
-                        </span>
-
-                    </div>
-
-
-                    <h3 id="minConsumption">
-                        0 Units
-                    </h3>
-
-
-                    <p id="minMonth">
-                        No data
-                    </p>
-
-                </div>
-
-
-                <div class="analysis-card">
-
-                    <div class="analysis-top">
-
-                        <span>
-                            Highest Bill
-                        </span>
-
-                        <span>
-                            💰
-                        </span>
-
-                    </div>
-
-
-                    <h3 id="maxBill">
-                        ₹0
-                    </h3>
-
-
-                    <p id="maxBillMonth">
-                        No data
-                    </p>
-
-                </div>
-
-
-                <div class="analysis-card">
-
-                    <div class="analysis-top">
-
-                        <span>
-                            Lowest Bill
-                        </span>
-
-                        <span>
-                            💵
-                        </span>
-
-                    </div>
-
-
-                    <h3 id="minBill">
-                        ₹0
-                    </h3>
-
-
-                    <p id="minBillMonth">
-                        No data
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= HIGH CONSUMPTION ================= -->
-
-        <section class="section">
-
-            <div class="warning-card">
-
-                <div>
-
-                    <span class="warning-icon">
-                        ⚠️
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        High Consumption Detection
-                    </h3>
-
-                    <p>
-                        Enter a consumption limit to identify
-                        months with unusually high electricity usage.
-                    </p>
-
-                </div>
-
-
-                <div class="limit-box">
+                    <label for="month">
+                        Month
+                    </label>
 
                     <input
-                        type="number"
-                        id="consumptionLimit"
-                        placeholder="Limit in units"
-                        min="0"
+                        type="text"
+                        id="month"
+                        placeholder="Example: January"
+                        required
                     >
 
-
-                    <button
-                        class="primary-btn"
-                        onclick="checkHighConsumption()">
-
-                        Check
-
-                    </button>
-
                 </div>
 
-            </div>
 
+                <div class="form-group">
 
-            <div
-                id="highConsumptionResult"
-                class="result-box">
-
-                Enter a limit to check high consumption.
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= APPLIANCES ================= -->
-
-        <section id="appliances" class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        APPLIANCE ANALYSIS
-                    </span>
-
-                    <h2>
-                        Appliance-wise Consumption
-                    </h2>
-
-                    <p>
-                        Estimate electricity consumption of household
-                        appliances.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="appliance-grid">
-
-
-                <!-- FAN -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        🌀
-                    </div>
-
-                    <h3>
-                        Fan
-                    </h3>
-
-                    <label>
-                        Power (Watts)
+                    <label for="units">
+                        Electricity Consumption
                     </label>
 
                     <input
                         type="number"
-                        class="appliance-power"
-                        data-appliance="Fan"
-                        placeholder="Example: 75"
+                        id="units"
+                        placeholder="Enter units"
                         min="0"
+                        step="0.01"
+                        required
                     >
 
-                    <label>
-                        Hours per Day
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="rate">
+                        Electricity Rate (₹/unit)
                     </label>
 
                     <input
                         type="number"
-                        class="appliance-hours"
+                        id="rate"
                         placeholder="Example: 8"
                         min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- AC -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        ❄️
-                    </div>
-
-                    <h3>
-                        AC
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="AC"
-                        placeholder="Example: 1500"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 6"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- REFRIGERATOR -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        🧊
-                    </div>
-
-                    <h3>
-                        Refrigerator
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="Refrigerator"
-                        placeholder="Example: 200"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 12"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- TV -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        📺
-                    </div>
-
-                    <h3>
-                        TV
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="TV"
-                        placeholder="Example: 100"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 5"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- LIGHTS -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        💡
-                    </div>
-
-                    <h3>
-                        Lights
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="Lights"
-                        placeholder="Example: 60"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 6"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- COMPUTER -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        Computer
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="Computer"
-                        placeholder="Example: 250"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 6"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 30"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- WASHING MACHINE -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        🧺
-                    </div>
-
-                    <h3>
-                        Washing Machine
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="Washing Machine"
-                        placeholder="Example: 500"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Example: 1"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Example: 15"
-                        min="0"
-                        max="31"
-                    >
-
-                </div>
-
-
-                <!-- OTHER -->
-
-                <div class="appliance-card">
-
-                    <div class="appliance-icon">
-                        🔌
-                    </div>
-
-                    <h3>
-                        Other
-                    </h3>
-
-                    <label>
-                        Power (Watts)
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-power"
-                        data-appliance="Other"
-                        placeholder="Enter power"
-                        min="0"
-                    >
-
-                    <label>
-                        Hours per Day
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-hours"
-                        placeholder="Enter hours"
-                        min="0"
-                        max="24"
-                        step="0.1"
-                    >
-
-                    <label>
-                        Days per Month
-                    </label>
-
-                    <input
-                        type="number"
-                        class="appliance-days"
-                        placeholder="Enter days"
-                        min="0"
-                        max="31"
+                        step="0.01"
+                        required
                     >
 
                 </div>
@@ -1019,1541 +273,1514 @@
 
 
             <button
-                class="primary-btn appliance-btn"
-                onclick="calculateAppliances()">
+                type="submit"
+                class="primary-btn">
 
-                Calculate Appliance Consumption
+                Add Data
 
             </button>
 
+        </form>
 
-            <div
-                id="applianceResult"
-                class="appliance-result">
+    </div>
 
-                <h3>
-                    Appliance Analysis Result
-                </h3>
+</section>
 
-                <p>
-                    Enter appliance details and click calculate.
-                </p>
 
-            </div>
+<section class="section">
 
-        </section>
+    <div class="section-heading">
 
+        <div>
 
-        <!-- ================= GRAPHS ================= -->
+            <span class="small-title">
+                RECORDS
+            </span>
 
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        VISUALIZATION
-                    </span>
-
-                    <h2>
-                        Electricity Graphs
-                    </h2>
-
-                    <p>
-                        Visual representation of electricity consumption
-                        and bills.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="charts-grid">
-
-
-                <!-- CONSUMPTION GRAPH -->
-
-                <div class="chart-card">
-
-                    <h3>
-                        Monthly Consumption
-                    </h3>
-
-                    <div class="chart-container">
-
-                        <canvas
-                            id="consumptionChart">
-                        </canvas>
-
-                    </div>
-
-                </div>
-
-
-                <!-- BILL GRAPH -->
-
-                <div class="chart-card">
-
-                    <h3>
-                        Monthly Electricity Bill
-                    </h3>
-
-                    <div class="chart-container">
-
-                        <canvas
-                            id="billChart">
-                        </canvas>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= STATISTICAL ANALYSIS ================= -->
-
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="small-title">
-                        STATISTICS
-                    </span>
-
-                    <h2>
-                        Statistical Analysis
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="statistics-box">
-
-                <div>
-                    <span>Total</span>
-                    <strong id="statTotal">0</strong>
-                </div>
-
-                <div>
-                    <span>Mean</span>
-                    <strong id="statMean">0</strong>
-                </div>
-
-                <div>
-                    <span>Median</span>
-                    <strong id="statMedian">0</strong>
-                </div>
-
-                <div>
-                    <span>Maximum</span>
-                    <strong id="statMaximum">0</strong>
-                </div>
-
-                <div>
-                    <span>Minimum</span>
-                    <strong id="statMinimum">0</strong>
-                </div>
-
-                <div>
-                    <span>Standard Deviation</span>
-                    <strong id="statStd">0</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= REPORT ================= -->
-
-        <section id="reports" class="section">
-
-            <div class="report-card">
-
-                <div>
-
-                    <span class="small-title">
-                        FINAL REPORT
-                    </span>
-
-                    <h2>
-                        Complete Electricity Report
-                    </h2>
-
-                    <p>
-                        Generate a complete summary of your monthly
-                        electricity consumption and bills.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="primary-btn"
-                    onclick="generateReport()">
-
-                    Generate Report
-
-                </button>
-
-            </div>
-
-
-            <div
-                id="reportOutput"
-                class="report-output">
-
-                <p>
-                    Your complete report will appear here.
-                </p>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <h3>
-                ⚡ Electricity Consumption Analyzer
-            </h3>
+            <h2>
+                Monthly Electricity Data
+            </h2>
 
             <p>
-                Smart electricity monitoring and analysis system.
-            </p>
-
-            <p class="copyright">
-                © 2026 Electricity Analyzer
+                View all recorded electricity consumption.
             </p>
 
         </div>
 
-    </footer>
+
+        <button
+            class="outline-btn"
+            onclick="clearData()">
+
+            Clear Data
+
+        </button>
+
+    </div>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <div class="table-container">
 
-    <script>
+        <table>
 
-        /*
-        ============================================
-        FRONTEND DATA
-        ============================================
-        */
+            <thead>
 
-        let electricityData = [];
+                <tr>
 
+                    <th>#</th>
+                    <th>Month</th>
+                    <th>Consumption</th>
+                    <th>Rate</th>
+                    <th>Bill</th>
+                    <th>Status</th>
 
-        /*
-        ============================================
-        GRAPH VARIABLES
-        ============================================
-        */
+                </tr>
 
-        let consumptionChart = null;
-
-        let billChart = null;
+            </thead>
 
 
-        /*
-        ============================================
-        ADD MONTHLY DATA
-        ============================================
-        */
+            <tbody id="dataTable">
 
-        document
-            .getElementById("electricityForm")
-            .addEventListener(
-                "submit",
-                function(event) {
+                <tr>
 
-                    event.preventDefault();
+                    <td colspan="6" class="empty">
+                        No electricity data available.
+                    </td>
 
+                </tr>
 
-                    const month =
-                        document
-                            .getElementById("month")
-                            .value
-                            .trim();
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
 
 
-                    const units =
-                        Number(
-                            document
-                                .getElementById("units")
-                                .value
-                        );
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                ANALYSIS
+            </span>
+
+            <h2>
+                Consumption Analysis
+            </h2>
+
+        </div>
+
+    </div>
 
 
-                    const rate =
-                        Number(
-                            document
-                                .getElementById("rate")
-                                .value
-                        );
+    <div class="analysis-grid">
+
+        <div class="analysis-card">
+
+            <div class="analysis-top">
+
+                <span>
+                    Highest Consumption
+                </span>
+
+                <span>
+                    🔺
+                </span>
+
+            </div>
+
+            <h3 id="maxConsumption">
+                0 Units
+            </h3>
+
+            <p id="maxMonth">
+                No data
+            </p>
+
+        </div>
 
 
-                    if (month === "") {
+        <div class="analysis-card">
 
-                        alert(
-                            "Please enter a month."
-                        );
+            <div class="analysis-top">
 
-                        return;
+                <span>
+                    Lowest Consumption
+                </span>
 
-                    }
+                <span>
+                    🔻
+                </span>
 
+            </div>
 
-                    if (
-                        units < 0 ||
-                        rate < 0
-                    ) {
+            <h3 id="minConsumption">
+                0 Units
+            </h3>
 
-                        alert(
-                            "Values cannot be negative."
-                        );
+            <p id="minMonth">
+                No data
+            </p>
 
-                        return;
-
-                    }
-
-
-                    const bill =
-                        units * rate;
+        </div>
 
 
-                    electricityData.push({
+        <div class="analysis-card">
 
-                        month: month,
+            <div class="analysis-top">
 
-                        units: units,
+                <span>
+                    Highest Bill
+                </span>
 
-                        rate: rate,
+                <span>
+                    💰
+                </span>
 
-                        bill: bill
+            </div>
 
-                    });
+            <h3 id="maxBill">
+                ₹0
+            </h3>
 
+            <p id="maxBillMonth">
+                No data
+            </p>
 
-                    this.reset();
-
-
-                    updateDashboard();
-
-                    updateTable();
-
-                    updateGraphs();
-
-                }
-            );
+        </div>
 
 
-        /*
-        ============================================
-        UPDATE DASHBOARD
-        ============================================
-        */
+        <div class="analysis-card">
 
-        function updateDashboard() {
+            <div class="analysis-top">
 
-            if (
-                electricityData.length === 0
-            ) {
+                <span>
+                    Lowest Bill
+                </span>
 
-                return;
+                <span>
+                    💵
+                </span>
 
-            }
+            </div>
+
+            <h3 id="minBill">
+                ₹0
+            </h3>
+
+            <p id="minBillMonth">
+                No data
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="warning-card">
+
+        <div>
+
+            <span class="warning-icon">
+                ⚠️
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                High Consumption Detection
+            </h3>
+
+            <p>
+                Enter a consumption limit to identify
+                months with unusually high electricity usage.
+            </p>
+
+        </div>
+
+
+        <div class="limit-box">
+
+            <input
+                type="number"
+                id="consumptionLimit"
+                placeholder="Limit in units"
+                min="0"
+            >
+
+            <button
+                class="primary-btn"
+                onclick="checkHighConsumption()">
+
+                Check
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="highConsumptionResult"
+        class="result-box">
+
+        Enter a limit to check high consumption.
+
+    </div>
+
+</section>
+
+
+<!-- ================= GRAPHS ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                VISUALIZATION
+            </span>
+
+            <h2>
+                Electricity Graphs
+            </h2>
+
+            <p>
+                Visual representation of electricity consumption
+                and bills.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="charts-grid">
+
+
+        <div class="chart-card">
+
+            <h3>
+                Monthly Consumption
+            </h3>
+
+            <div class="chart-container">
+
+                <canvas id="consumptionChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>
+                Monthly Electricity Bill
+            </h3>
+
+            <div class="chart-container">
+
+                <canvas id="billChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                STATISTICS
+            </span>
+
+            <h2>
+                Statistical Analysis
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="statistics-box">
+
+        <div>
+
+            <span>Total</span>
+
+            <strong id="statTotal">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>Mean</span>
+
+            <strong id="statMean">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>Median</span>
+
+            <strong id="statMedian">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>Maximum</span>
+
+            <strong id="statMaximum">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>Minimum</span>
+
+            <strong id="statMinimum">
+                0
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>Standard Deviation</span>
+
+            <strong id="statStd">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="reports" class="section">
+
+    <div class="report-card">
+
+        <div>
+
+            <span class="small-title">
+                FINAL REPORT
+            </span>
+
+            <h2>
+                Complete Electricity Report
+            </h2>
+
+            <p>
+                Generate a complete summary of your monthly
+                electricity consumption and bills.
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="generateReport()">
+
+            Generate Report
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="reportOutput"
+        class="report-output">
+
+        <p>
+            Your complete report will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>
+            ⚡ Electricity Consumption Analyzer
+        </h3>
+
+        <p>
+            Smart electricity monitoring and analysis system.
+        </p>
+
+        <p class="copyright">
+            © 2026 Electricity Analyzer
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   ELECTRICITY DATA
+========================================== */
+
+let electricityData =
+    JSON.parse(
+        localStorage.getItem("electricityData")
+    ) || [];
+
+
+/* ==========================================
+   CHART VARIABLES
+========================================== */
+
+let consumptionChart = null;
+let billChart = null;
+
+
+/* ==========================================
+   SAVE DATA
+========================================== */
+
+function saveData() {
+
+    localStorage.setItem(
+        "electricityData",
+        JSON.stringify(electricityData)
+    );
+
+}
+
+
+/* ==========================================
+   ADD MONTHLY DATA
+========================================== */
+
+document
+    .getElementById("electricityForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const month =
+                document
+                    .getElementById("month")
+                    .value
+                    .trim();
 
 
             const units =
-                electricityData.map(
-                    item => item.units
-                );
-
-
-            const bills =
-                electricityData.map(
-                    item => item.bill
-                );
-
-
-            const total =
-                units.reduce(
-                    (sum, value) =>
-                        sum + value,
-                    0
-                );
-
-
-            const average =
-                total / units.length;
-
-
-            const totalBill =
-                bills.reduce(
-                    (sum, value) =>
-                        sum + value,
-                    0
-                );
-
-
-            const max =
-                Math.max(...units);
-
-
-            const min =
-                Math.min(...units);
-
-
-            const maxIndex =
-                units.indexOf(max);
-
-
-            const minIndex =
-                units.indexOf(min);
-
-
-            const maxBill =
-                Math.max(...bills);
-
-
-            const minBill =
-                Math.min(...bills);
-
-
-            const maxBillIndex =
-                bills.indexOf(maxBill);
-
-
-            const minBillIndex =
-                bills.indexOf(minBill);
-
-
-            document.getElementById(
-                "totalConsumption"
-            ).textContent =
-                total.toFixed(2) +
-                " Units";
-
-
-            document.getElementById(
-                "averageConsumption"
-            ).textContent =
-                average.toFixed(2) +
-                " Units";
-
-
-            document.getElementById(
-                "totalBill"
-            ).textContent =
-                "₹" +
-                totalBill.toFixed(2);
-
-
-            document.getElementById(
-                "monthsRecorded"
-            ).textContent =
-                electricityData.length;
-
-
-            document.getElementById(
-                "maxConsumption"
-            ).textContent =
-                max.toFixed(2) +
-                " Units";
-
-
-            document.getElementById(
-                "maxMonth"
-            ).textContent =
-                electricityData[
-                    maxIndex
-                ].month;
-
-
-            document.getElementById(
-                "minConsumption"
-            ).textContent =
-                min.toFixed(2) +
-                " Units";
-
-
-            document.getElementById(
-                "minMonth"
-            ).textContent =
-                electricityData[
-                    minIndex
-                ].month;
-
-
-            document.getElementById(
-                "maxBill"
-            ).textContent =
-                "₹" +
-                maxBill.toFixed(2);
-
-
-            document.getElementById(
-                "maxBillMonth"
-            ).textContent =
-                electricityData[
-                    maxBillIndex
-                ].month;
-
-
-            document.getElementById(
-                "minBill"
-            ).textContent =
-                "₹" +
-                minBill.toFixed(2);
-
-
-            document.getElementById(
-                "minBillMonth"
-            ).textContent =
-                electricityData[
-                    minBillIndex
-                ].month;
-
-
-            updateStatistics(units);
-
-        }
-
-
-        /*
-        ============================================
-        UPDATE TABLE
-        ============================================
-        */
-
-        function updateTable() {
-
-            const table =
-                document.getElementById(
-                    "dataTable"
-                );
-
-
-            table.innerHTML = "";
-
-
-            if (
-                electricityData.length === 0
-            ) {
-
-                table.innerHTML = `
-
-                    <tr>
-
-                        <td
-                            colspan="6"
-                            class="empty">
-
-                            No electricity data available.
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-                return;
-
-            }
-
-
-            electricityData.forEach(
-                function(item, index) {
-
-                    let status =
-                        "Normal";
-
-
-                    if (
-                        item.units > 300
-                    ) {
-
-                        status =
-                            "High";
-
-                    }
-
-
-                    const row =
-                        document.createElement(
-                            "tr"
-                        );
-
-
-                    row.innerHTML = `
-
-                        <td>
-                            ${index + 1}
-                        </td>
-
-                        <td>
-                            ${item.month}
-                        </td>
-
-                        <td>
-                            ${item.units.toFixed(2)}
-                            Units
-                        </td>
-
-                        <td>
-                            ₹${item.rate.toFixed(2)}
-                        </td>
-
-                        <td>
-                            ₹${item.bill.toFixed(2)}
-                        </td>
-
-                        <td>
-
-                            <span class="status">
-                                ${status}
-                            </span>
-
-                        </td>
-
-                    `;
-
-
-                    table.appendChild(row);
-
-                }
-            );
-
-        }
-
-
-        /*
-        ============================================
-        STATISTICAL ANALYSIS
-        ============================================
-        */
-
-        function updateStatistics(values) {
-
-            if (
-                values.length === 0
-            ) {
-
-                return;
-
-            }
-
-
-            const sorted =
-                [...values].sort(
-                    (a, b) => a - b
-                );
-
-
-            const total =
-                values.reduce(
-                    (sum, value) =>
-                        sum + value,
-                    0
-                );
-
-
-            const mean =
-                total / values.length;
-
-
-            let median;
-
-
-            const middle =
-                Math.floor(
-                    sorted.length / 2
-                );
-
-
-            if (
-                sorted.length % 2 === 0
-            ) {
-
-                median =
-                    (
-                        sorted[middle - 1] +
-                        sorted[middle]
-                    ) / 2;
-
-            } else {
-
-                median =
-                    sorted[middle];
-
-            }
-
-
-            const variance =
-                values.reduce(
-                    (sum, value) =>
-                        sum +
-                        Math.pow(
-                            value - mean,
-                            2
-                        ),
-                    0
-                ) / values.length;
-
-
-            const standardDeviation =
-                Math.sqrt(variance);
-
-
-            document.getElementById(
-                "statTotal"
-            ).textContent =
-                total.toFixed(2);
-
-
-            document.getElementById(
-                "statMean"
-            ).textContent =
-                mean.toFixed(2);
-
-
-            document.getElementById(
-                "statMedian"
-            ).textContent =
-                median.toFixed(2);
-
-
-            document.getElementById(
-                "statMaximum"
-            ).textContent =
-                Math.max(
-                    ...values
-                ).toFixed(2);
-
-
-            document.getElementById(
-                "statMinimum"
-            ).textContent =
-                Math.min(
-                    ...values
-                ).toFixed(2);
-
-
-            document.getElementById(
-                "statStd"
-            ).textContent =
-                standardDeviation.toFixed(2);
-
-        }
-
-
-        /*
-        ============================================
-        HIGH CONSUMPTION
-        ============================================
-        */
-
-        function checkHighConsumption() {
-
-            const limit =
                 Number(
-                    document.getElementById(
-                        "consumptionLimit"
-                    ).value
+                    document
+                        .getElementById("units")
+                        .value
                 );
 
 
-            const output =
-                document.getElementById(
-                    "highConsumptionResult"
+            const rate =
+                Number(
+                    document
+                        .getElementById("rate")
+                        .value
                 );
 
 
-            if (
-                isNaN(limit) ||
-                limit < 0
-            ) {
+            if (!month) {
 
-                output.innerHTML =
-                    "Please enter a valid limit.";
+                alert("Please enter a month.");
 
                 return;
 
             }
 
 
-            const result =
-                electricityData.filter(
-                    item =>
-                        item.units > limit
+            if (units < 0 || rate < 0) {
+
+                alert(
+                    "Values cannot be negative."
                 );
-
-
-            if (
-                result.length === 0
-            ) {
-
-                output.innerHTML =
-                    "No month has consumption above this limit.";
 
                 return;
 
             }
 
 
-            output.innerHTML = `
+            const bill =
+                units * rate;
 
-                <strong>
-                    High Consumption Months:
-                </strong>
 
-                ${result
-                    .map(
-                        item =>
-                        `<p>
-                            ${item.month}
-                            —
-                            ${item.units.toFixed(2)}
-                            Units
-                        </p>`
-                    )
-                    .join("")}
+            electricityData.push({
+
+                month: month,
+                units: units,
+                rate: rate,
+                bill: bill
+
+            });
+
+
+            saveData();
+
+
+            this.reset();
+
+
+            updateDashboard();
+
+            updateTable();
+
+            updateCharts();
+
+        }
+    );
+
+
+/* ==========================================
+   UPDATE DASHBOARD
+========================================== */
+
+function updateDashboard() {
+
+    if (electricityData.length === 0) {
+
+        return;
+
+    }
+
+
+    const units =
+        electricityData.map(
+            item => item.units
+        );
+
+
+    const bills =
+        electricityData.map(
+            item => item.bill
+        );
+
+
+    const total =
+        units.reduce(
+            (sum, value) =>
+                sum + value,
+            0
+        );
+
+
+    const average =
+        total / units.length;
+
+
+    const totalBill =
+        bills.reduce(
+            (sum, value) =>
+                sum + value,
+            0
+        );
+
+
+    const max =
+        Math.max(...units);
+
+
+    const min =
+        Math.min(...units);
+
+
+    const maxIndex =
+        units.indexOf(max);
+
+
+    const minIndex =
+        units.indexOf(min);
+
+
+    const maxBill =
+        Math.max(...bills);
+
+
+    const minBill =
+        Math.min(...bills);
+
+
+    const maxBillIndex =
+        bills.indexOf(maxBill);
+
+
+    const minBillIndex =
+        bills.indexOf(minBill);
+
+
+    document.getElementById(
+        "totalConsumption"
+    ).textContent =
+        total.toFixed(2) +
+        " Units";
+
+
+    document.getElementById(
+        "averageConsumption"
+    ).textContent =
+        average.toFixed(2) +
+        " Units";
+
+
+    document.getElementById(
+        "totalBill"
+    ).textContent =
+        "₹" +
+        totalBill.toFixed(2);
+
+
+    document.getElementById(
+        "monthsRecorded"
+    ).textContent =
+        electricityData.length;
+
+
+    document.getElementById(
+        "maxConsumption"
+    ).textContent =
+        max.toFixed(2) +
+        " Units";
+
+
+    document.getElementById(
+        "maxMonth"
+    ).textContent =
+        electricityData[maxIndex].month;
+
+
+    document.getElementById(
+        "minConsumption"
+    ).textContent =
+        min.toFixed(2) +
+        " Units";
+
+
+    document.getElementById(
+        "minMonth"
+    ).textContent =
+        electricityData[minIndex].month;
+
+
+    document.getElementById(
+        "maxBill"
+    ).textContent =
+        "₹" +
+        maxBill.toFixed(2);
+
+
+    document.getElementById(
+        "maxBillMonth"
+    ).textContent =
+        electricityData[maxBillIndex].month;
+
+
+    document.getElementById(
+        "minBill"
+    ).textContent =
+        "₹" +
+        minBill.toFixed(2);
+
+
+    document.getElementById(
+        "minBillMonth"
+    ).textContent =
+        electricityData[minBillIndex].month;
+
+
+    updateStatistics(units);
+
+}
+
+
+/* ==========================================
+   UPDATE TABLE
+========================================== */
+
+function updateTable() {
+
+    const table =
+        document.getElementById(
+            "dataTable"
+        );
+
+
+    if (electricityData.length === 0) {
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="6"
+                    class="empty">
+
+                    No electricity data available.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    table.innerHTML = "";
+
+
+    electricityData.forEach(
+        function(item, index) {
+
+            let status =
+                "Normal";
+
+
+            if (item.units > 300) {
+
+                status =
+                    "High";
+
+            }
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${item.month}
+                </td>
+
+                <td>
+                    ${item.units.toFixed(2)}
+                    Units
+                </td>
+
+                <td>
+                    ₹${item.rate.toFixed(2)}
+                </td>
+
+                <td>
+                    ₹${item.bill.toFixed(2)}
+                </td>
+
+                <td>
+
+                    <span class="status">
+                        ${status}
+                    </span>
+
+                </td>
 
             `;
 
+
+            table.appendChild(row);
+
         }
+    );
+
+}
 
 
-        /*
-        ============================================
-        APPLIANCE ANALYSIS
-        ============================================
-        */
+/* ==========================================
+   UPDATE STATISTICS
+========================================== */
 
-        function calculateAppliances() {
+function updateStatistics(values) {
 
-            const powerInputs =
-                document.querySelectorAll(
-                    ".appliance-power"
-                );
+    if (values.length === 0) {
 
+        return;
 
-            const hourInputs =
-                document.querySelectorAll(
-                    ".appliance-hours"
-                );
+    }
 
 
-            const dayInputs =
-                document.querySelectorAll(
-                    ".appliance-days"
-                );
+    const sorted =
+        [...values]
+            .sort(
+                (a, b) => a - b
+            );
 
 
-            let total = 0;
-
-            let highest = null;
-
-            let lowest = null;
-
-
-            powerInputs.forEach(
-                function(
-                    powerInput,
-                    index
-                ) {
-
-                    const power =
-                        Number(
-                            powerInput.value
-                        );
+    const total =
+        values.reduce(
+            (sum, value) =>
+                sum + value,
+            0
+        );
 
 
-                    const hours =
-                        Number(
-                            hourInputs[
-                                index
-                            ].value
-                        );
+    const mean =
+        total / values.length;
 
 
-                    const days =
-                        Number(
-                            dayInputs[
-                                index
-                            ].value
-                        );
+    let median;
 
 
-                    if (
-                        power <= 0 ||
-                        hours <= 0 ||
-                        days <= 0
-                    ) {
-
-                        return;
-
-                    }
+    const middle =
+        Math.floor(
+            sorted.length / 2
+        );
 
 
-                    const units =
-                        (
-                            power *
-                            hours *
-                            days
-                        ) / 1000;
+    if (sorted.length % 2 === 0) {
+
+        median =
+            (
+                sorted[middle - 1] +
+                sorted[middle]
+            ) / 2;
+
+    } else {
+
+        median =
+            sorted[middle];
+
+    }
 
 
-                    total += units;
+    const variance =
+        values.reduce(
+            (sum, value) =>
+                sum +
+                Math.pow(
+                    value - mean,
+                    2
+                ),
+            0
+        ) / values.length;
 
 
-                    const appliance =
-                        powerInput
-                            .dataset
-                            .appliance;
+    const standardDeviation =
+        Math.sqrt(variance);
 
 
-                    if (
-                        highest === null ||
-                        units > highest.units
-                    ) {
-
-                        highest = {
-
-                            name:
-                                appliance,
-
-                            units:
-                                units
-
-                        };
-
-                    }
+    document.getElementById(
+        "statTotal"
+    ).textContent =
+        total.toFixed(2);
 
 
-                    if (
-                        lowest === null ||
-                        units < lowest.units
-                    ) {
+    document.getElementById(
+        "statMean"
+    ).textContent =
+        mean.toFixed(2);
 
-                        lowest = {
 
-                            name:
-                                appliance,
+    document.getElementById(
+        "statMedian"
+    ).textContent =
+        median.toFixed(2);
 
-                            units:
-                                units
 
-                        };
+    document.getElementById(
+        "statMaximum"
+    ).textContent =
+        Math.max(...values)
+            .toFixed(2);
+
+
+    document.getElementById(
+        "statMinimum"
+    ).textContent =
+        Math.min(...values)
+            .toFixed(2);
+
+
+    document.getElementById(
+        "statStd"
+    ).textContent =
+        standardDeviation.toFixed(2);
+
+}
+
+
+/* ==========================================
+   GRAPHS
+========================================== */
+
+function updateCharts() {
+
+    const labels =
+        electricityData.map(
+            item => item.month
+        );
+
+
+    const units =
+        electricityData.map(
+            item => item.units
+        );
+
+
+    const bills =
+        electricityData.map(
+            item => item.bill
+        );
+
+
+    const consumptionCanvas =
+        document.getElementById(
+            "consumptionChart"
+        );
+
+
+    const billCanvas =
+        document.getElementById(
+            "billChart"
+        );
+
+
+    if (consumptionChart) {
+
+        consumptionChart.destroy();
+
+    }
+
+
+    if (billChart) {
+
+        billChart.destroy();
+
+    }
+
+
+    consumptionChart =
+        new Chart(
+            consumptionCanvas,
+            {
+
+                type: "line",
+
+                data: {
+
+                    labels: labels,
+
+                    datasets: [
+
+                        {
+
+                            label:
+                                "Consumption (Units)",
+
+                            data: units,
+
+                            borderWidth: 3,
+
+                            tension: 0.3,
+
+                            fill: false
+
+                        }
+
+                    ]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: true,
+
+                            title: {
+
+                                display: true,
+
+                                text:
+                                    "Units"
+
+                            }
+
+                        },
+
+                        x: {
+
+                            title: {
+
+                                display: true,
+
+                                text:
+                                    "Month"
+
+                            }
+
+                        }
 
                     }
 
                 }
-            );
+
+            }
+        );
 
 
-            const output =
-                document.getElementById(
-                    "applianceResult"
-                );
+    billChart =
+        new Chart(
+            billCanvas,
+            {
+
+                type: "bar",
+
+                data: {
+
+                    labels: labels,
+
+                    datasets: [
+
+                        {
+
+                            label:
+                                "Electricity Bill (₹)",
+
+                            data: bills,
+
+                            borderWidth: 1
+
+                        }
+
+                    ]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: true,
+
+                            title: {
+
+                                display: true,
+
+                                text:
+                                    "Bill (₹)"
+
+                            }
+
+                        },
+
+                        x: {
+
+                            title: {
+
+                                display: true,
+
+                                text:
+                                    "Month"
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        );
+
+}
 
 
-            if (
-                highest === null
-            ) {
+/* ==========================================
+   HIGH CONSUMPTION
+========================================== */
 
-                output.innerHTML = `
+function checkHighConsumption() {
 
-                    <h3>
-                        Appliance Analysis Result
-                    </h3>
+    const limit =
+        Number(
+            document.getElementById(
+                "consumptionLimit"
+            ).value
+        );
+
+
+    const output =
+        document.getElementById(
+            "highConsumptionResult"
+        );
+
+
+    if (
+        !Number.isFinite(limit) ||
+        limit < 0
+    ) {
+
+        output.innerHTML =
+            "Please enter a valid limit.";
+
+        return;
+
+    }
+
+
+    if (electricityData.length === 0) {
+
+        output.innerHTML =
+            "Please add electricity data first.";
+
+        return;
+
+    }
+
+
+    const result =
+        electricityData.filter(
+            item =>
+                item.units > limit
+        );
+
+
+    if (result.length === 0) {
+
+        output.innerHTML =
+            "No month has consumption above this limit.";
+
+        return;
+
+    }
+
+
+    output.innerHTML = `
+
+        <strong>
+            High Consumption Months:
+        </strong>
+
+        ${result
+            .map(
+                item => `
 
                     <p>
-                        Please enter appliance
-                        details first.
+
+                        ${item.month}
+                        —
+                        ${item.units.toFixed(2)}
+                        Units
+
                     </p>
 
-                `;
+                `
+            )
+            .join("")}
 
-                return;
+    `;
 
-            }
+}
 
 
-            output.innerHTML = `
+/* ==========================================
+   COMPLETE REPORT
+========================================== */
 
-                <h3>
-                    Appliance Analysis Result
-                </h3>
+function generateReport() {
 
-                <div class="appliance-summary">
+    const output =
+        document.getElementById(
+            "reportOutput"
+        );
 
-                    <div>
 
-                        <span>
-                            Total Consumption
-                        </span>
+    if (electricityData.length === 0) {
 
-                        <strong>
-                            ${total.toFixed(2)}
-                            Units
-                        </strong>
+        output.innerHTML =
+            "<p>No data available.</p>";
 
-                    </div>
+        return;
 
+    }
 
-                    <div>
 
-                        <span>
-                            Highest Consuming Appliance
-                        </span>
+    const units =
+        electricityData.map(
+            item => item.units
+        );
 
-                        <strong>
-                            ${highest.name}
-                            (${highest.units.toFixed(2)}
-                            Units)
-                        </strong>
 
-                    </div>
+    const bills =
+        electricityData.map(
+            item => item.bill
+        );
 
 
-                    <div>
+    const totalUnits =
+        units.reduce(
+            (sum, value) =>
+                sum + value,
+            0
+        );
 
-                        <span>
-                            Lowest Consuming Appliance
-                        </span>
 
-                        <strong>
-                            ${lowest.name}
-                            (${lowest.units.toFixed(2)}
-                            Units)
-                        </strong>
+    const totalBill =
+        bills.reduce(
+            (sum, value) =>
+                sum + value,
+            0
+        );
 
-                    </div>
 
-                </div>
+    const averageUnits =
+        totalUnits /
+        units.length;
 
-            `;
 
-        }
+    const averageBill =
+        totalBill /
+        bills.length;
 
 
-        /*
-        ============================================
-        ELECTRICITY GRAPHS
-        ============================================
-        */
+    const maxUnits =
+        Math.max(...units);
 
-        function updateGraphs() {
 
-            const months =
-                electricityData.map(
-                    item => item.month
-                );
+    const minUnits =
+        Math.min(...units);
 
 
-            const units =
-                electricityData.map(
-                    item => item.units
-                );
+    const maxIndex =
+        units.indexOf(maxUnits);
 
 
-            const bills =
-                electricityData.map(
-                    item => item.bill
-                );
+    const minIndex =
+        units.indexOf(minUnits);
 
 
-            /*
-            No data
-            */
+    output.innerHTML = `
 
-            if (
-                electricityData.length === 0
-            ) {
+        <h3>
+            ⚡ Electricity Consumption Report
+        </h3>
 
-                if (
-                    consumptionChart
-                ) {
+        <p>
 
-                    consumptionChart.destroy();
+            <strong>
+                Months Recorded:
+            </strong>
 
-                    consumptionChart =
-                        null;
+            ${electricityData.length}
 
-                }
+        </p>
 
+        <p>
 
-                if (
-                    billChart
-                ) {
+            <strong>
+                Total Consumption:
+            </strong>
 
-                    billChart.destroy();
+            ${totalUnits.toFixed(2)}
+            Units
 
-                    billChart =
-                        null;
+        </p>
 
-                }
 
-                return;
+        <p>
 
-            }
+            <strong>
+                Average Consumption:
+            </strong>
 
+            ${averageUnits.toFixed(2)}
+            Units
 
-            /*
-            Destroy previous charts
-            */
+        </p>
 
-            if (
-                consumptionChart
-            ) {
 
-                consumptionChart.destroy();
+        <p>
 
-            }
+            <strong>
+                Maximum Consumption:
+            </strong>
 
+            ${maxUnits.toFixed(2)}
+            Units
 
-            if (
-                billChart
-            ) {
+            (${electricityData[maxIndex].month})
 
-                billChart.destroy();
+        </p>
 
-            }
 
+        <p>
 
-            /*
-            ========================================
-            MONTHLY CONSUMPTION
-            ========================================
-            */
+            <strong>
+                Minimum Consumption:
+            </strong>
 
-            const consumptionCanvas =
-                document.getElementById(
-                    "consumptionChart"
-                );
+            ${minUnits.toFixed(2)}
+            Units
 
+            (${electricityData[minIndex].month})
 
-            consumptionChart =
-                new Chart(
-                    consumptionCanvas,
-                    {
+        </p>
 
-                        type: "line",
 
-                        data: {
+        <p>
 
-                            labels: months,
+            <strong>
+                Total Bill:
+            </strong>
 
-                            datasets: [
+            ₹${totalBill.toFixed(2)}
 
-                                {
+        </p>
 
-                                    label:
-                                        "Consumption (Units)",
 
-                                    data:
-                                        units,
+        <p>
 
-                                    borderWidth:
-                                        3,
+            <strong>
+                Average Bill:
+            </strong>
 
-                                    tension:
-                                        0.3,
+            ₹${averageBill.toFixed(2)}
 
-                                    pointRadius:
-                                        5,
+        </p>
 
-                                    fill:
-                                        false
+    `;
 
-                                }
+}
 
-                            ]
 
-                        },
+/* ==========================================
+   CLEAR DATA
+========================================== */
 
+function clearData() {
 
-                        options: {
+    if (
+        electricityData.length === 0
+    ) {
 
-                            responsive:
-                                true,
+        return;
 
-                            maintainAspectRatio:
-                                false,
+    }
 
-                            scales: {
 
-                                y: {
+    const confirmClear =
+        confirm(
+            "Are you sure you want to clear all data?"
+        );
 
-                                    beginAtZero:
-                                        true,
 
-                                    title: {
+    if (!confirmClear) {
 
-                                        display:
-                                            true,
+        return;
 
-                                        text:
-                                            "Units"
+    }
 
-                                    }
 
-                                },
+    electricityData = [];
 
-                                x: {
 
-                                    title: {
+    localStorage.removeItem(
+        "electricityData"
+    );
 
-                                        display:
-                                            true,
 
-                                        text:
-                                            "Month"
+    updateTable();
 
-                                    }
 
-                                }
+    location.reload();
 
-                            }
+}
 
-                        }
 
-                    }
-                );
+/* ==========================================
+   LOAD DATA WHEN PAGE OPENS
+========================================== */
 
+window.addEventListener(
+    "load",
+    function() {
 
-            /*
-            ========================================
-            MONTHLY BILL
-            ========================================
-            */
+        updateDashboard();
 
-            const billCanvas =
-                document.getElementById(
-                    "billChart"
-                );
+        updateTable();
 
+        updateCharts();
 
-            billChart =
-                new Chart(
-                    billCanvas,
-                    {
+    }
+);
 
-                        type: "bar",
-
-                        data: {
-
-                            labels: months,
-
-                            datasets: [
-
-                                {
-
-                                    label:
-                                        "Electricity Bill (₹)",
-
-                                    data:
-                                        bills,
-
-                                    borderWidth:
-                                        1
-
-                                }
-
-                            ]
-
-                        },
-
-
-                        options: {
-
-                            responsive:
-                                true,
-
-                            maintainAspectRatio:
-                                false,
-
-                            scales: {
-
-                                y: {
-
-                                    beginAtZero:
-                                        true,
-
-                                    title: {
-
-                                        display:
-                                            true,
-
-                                        text:
-                                            "Bill (₹)"
-
-                                    }
-
-                                },
-
-                                x: {
-
-                                    title: {
-
-                                        display:
-                                            true,
-
-                                        text:
-                                            "Month"
-
-                                    }
-
-                                }
-
-                            }
-
-                        }
-
-                    }
-                );
-
-        }
-
-
-        /*
-        ============================================
-        COMPLETE REPORT
-        ============================================
-        */
-
-        function generateReport() {
-
-            const output =
-                document.getElementById(
-                    "reportOutput"
-                );
-
-
-            if (
-                electricityData.length === 0
-            ) {
-
-                output.innerHTML =
-                    "<p>No data available.</p>";
-
-                return;
-
-            }
-
-
-            const units =
-                electricityData.map(
-                    item => item.units
-                );
-
-
-            const bills =
-                electricityData.map(
-                    item => item.bill
-                );
-
-
-            const totalUnits =
-                units.reduce(
-                    (sum, value) =>
-                        sum + value,
-                    0
-                );
-
-
-            const totalBill =
-                bills.reduce(
-                    (sum, value) =>
-                        sum + value,
-                    0
-                );
-
-
-            const averageUnits =
-                totalUnits /
-                units.length;
-
-
-            const averageBill =
-                totalBill /
-                bills.length;
-
-
-            const maxUnits =
-                Math.max(...units);
-
-
-            const minUnits =
-                Math.min(...units);
-
-
-            const maxIndex =
-                units.indexOf(
-                    maxUnits
-                );
-
-
-            const minIndex =
-                units.indexOf(
-                    minUnits
-                );
-
-
-            output.innerHTML = `
-
-                <h3>
-                    ⚡ Electricity Consumption Report
-                </h3>
-
-
-                <p>
-
-                    <strong>
-                        Total Consumption:
-                    </strong>
-
-                    ${totalUnits.toFixed(2)}
-                    Units
-
-                </p>
-
-
-                <p>
-
-                    <strong>
-                        Average Consumption:
-                    </strong>
-
-                    ${averageUnits.toFixed(2)}
-                    Units
-
-                </p>
-
-
-                <p>
-
-                    <strong>
-                        Maximum Consumption:
-                    </strong>
-
-                    ${maxUnits.toFixed(2)}
-                    Units
-
-                    (
-                    ${electricityData[
-                        maxIndex
-                    ].month}
-                    )
-
-                </p>
-
-
-                <p>
-
-                    <strong>
-                        Minimum Consumption:
-                    </strong>
-
-                    ${minUnits.toFixed(2)}
-                    Units
-
-                    (
-                    ${electricityData[
-                        minIndex
-                    ].month}
-                    )
-
-                </p>
-
-
-                <p>
-
-                    <strong>
-                        Total Bill:
-                    </strong>
-
-                    ₹${totalBill.toFixed(2)}
-
-                </p>
-
-
-                <p>
-
-                    <strong>
-                        Average Bill:
-                    </strong>
-
-                    ₹${averageBill.toFixed(2)}
-
-                </p>
-
-            `;
-
-        }
-
-
-        /*
-        ============================================
-        CLEAR DATA
-        ============================================
-        */
-
-        function clearData() {
-
-            if (
-                electricityData.length === 0
-            ) {
-
-                return;
-
-            }
-
-
-            const confirmClear =
-                confirm(
-                    "Are you sure you want to clear all data?"
-                );
-
-
-            if (
-                confirmClear
-            ) {
-
-                electricityData = [];
-
-
-                updateTable();
-
-
-                updateGraphs();
-
-
-                location.reload();
-
-            }
-
-        }
-
-    </script>
+</script>
 
 </body>
 
